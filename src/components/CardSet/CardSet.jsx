@@ -11,8 +11,7 @@ const getRandomIds = () => {
   return output;
 };
 
-const CardSet = () => {
-  const idList = getRandomIds();
+const CardSet = ({ idList }) => {
   const [dataFromApi, setDataFromApi] = useState([]);
   //call to the api
 
@@ -24,12 +23,15 @@ const CardSet = () => {
       setDataFromApi(result.data);
     };
     callApi(idList);
-  }, []);
+  }, [idList]);
 
   const renderCharCards = () => {
     return dataFromApi.map((element) => {
       return (
         <CharCard
+          clickHandler={() => {
+            console.log('tu puta madre');
+          }}
           key={element.id}
           imgURL={element.image}
           name={element.name}

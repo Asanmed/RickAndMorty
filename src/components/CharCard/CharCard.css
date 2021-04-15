@@ -9,6 +9,16 @@
   position: relative;
 }
 
+.card-container:hover {
+  transform: translatey(-0.5rem);
+  box-shadow: 0.7rem 0.7rem 2rem 0.7rem rgba(0, 0, 0, 0.603);
+  transition-duration: 300ms;
+}
+.card-container:active {
+  transform: translatey(0);
+  box-shadow: 0.2rem 0.2rem 1.5rem 0.2rem rgba(0, 0, 0, 0.603);
+  transition-duration: 100ms;
+}
 .card-img {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.527);
   margin-top: 2rem;

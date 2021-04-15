@@ -8,3 +8,10 @@ body {
   color: #f0cce9;
   background-color: #66385d;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

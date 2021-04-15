@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import './CharCard.css';
-const CharCard = ({ imgURL, name, status, specie, gender, episodes }) => {
+const CharCard = ({
+  clickHandler,
+  imgURL,
+  name,
+  status,
+  specie,
+  gender,
+  episodes,
+}) => {
   const [stateFontColor, setStateFontColor] = useState(
     status === 'Alive' ? '#86D95F' : '#F27272'
   );
   return (
-    <div className="card-container">
+    <div onClick={clickHandler} className="card-container">
       <h4 className="card-status-text" style={{ color: `${stateFontColor}` }}>
         {status}
       </h4>
