@@ -30,7 +30,7 @@ const CardSet = ({ idList }) => {
       return (
         <CharCard
           clickHandler={() => {
-            console.log('tu puta madre');
+            console.log('COMING SOON...');
           }}
           key={element.id}
           imgURL={element.image}
