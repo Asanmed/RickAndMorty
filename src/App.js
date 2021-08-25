@@ -9,10 +9,6 @@ import { AdvancedSearchForm } from './components/AdvancedSearchForm/AdvancedSear
 import CharDetails from './components/CharDetails/CharDetails';
 import LocationDetails from './components/LocationDetails/LocationDetails';
 import EpisodeDetails from './components/EpisodeDetails/EpisodeDetais';
-import {
-    ErrorMessage,
-    NoSearchResults,
-} from './components/ErrorMessages/ErrorMessages';
 
 function App() {
     return (

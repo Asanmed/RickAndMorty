@@ -8,7 +8,6 @@ import {
     requestCharacters,
     requestLocations,
     requestEpisodes,
-    selectUiState,
 } from '../../state/appSlice';
 
 import { Filters } from '../../utils/Filters';
@@ -31,7 +30,6 @@ export const AdvancedSearchForm = () => {
     const dispatch = useDispatch();
 
     const activeCategory = useSelector(selectCategory);
-    const uiState = useSelector(selectUiState);
 
     useEffect(() => {
         setName('');
