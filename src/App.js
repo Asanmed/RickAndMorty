@@ -1,24 +1,46 @@
-import { useState } from 'react';
-import './App.css';
-import CardSet from './components/CardSet/CardSet';
-import ReloadButton from './components/ReloadButton/ReloadButton';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-const getRandomIds = () => {
-  let output = [];
-  for (let index = 0; index < 6; index++) {
-    output.push(Math.floor(Math.random() * (671 - 1)) + 1);
-  }
-  return output;
-};
+import CardSet from './components/CardSet/CardSet';
+
+import { GlobalStyle } from './styles/globalStyles';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
+import { AdvancedSearchForm } from './components/AdvancedSearchForm/AdvancedSearchForm';
+import CharDetails from './components/CharDetails/CharDetails';
+import LocationDetails from './components/LocationDetails/LocationDetails';
+import EpisodeDetails from './components/EpisodeDetails/EpisodeDetais';
+import {
+    ErrorMessage,
+    NoSearchResults,
+} from './components/ErrorMessages/ErrorMessages';
 
 function App() {
-  const [cardList, setCardList] = useState(getRandomIds());
-  return (
-    <div className="App">
-      <ReloadButton clickHandler={() => setCardList(getRandomIds())} />
-      <CardSet idList={cardList} />
-    </div>
-  );
+    return (
+        <div className="App">
+            <GlobalStyle />
+            <Router>
+                <NavBar />
+
+                <Switch>
+                    <Route exact path="/">
+                        <AdvancedSearchForm />
+                        <CardSet />
+                    </Route>
+                    <Route exact path="/:id">
+                        <CharDetails />
+                    </Route>
+                    <Route exact path="/location/:id">
+                        <LocationDetails />
+                    </Route>
+                    <Route exact path="/episode/:id">
+                        <EpisodeDetails />
+                    </Route>
+                </Switch>
+            </Router>
+
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
